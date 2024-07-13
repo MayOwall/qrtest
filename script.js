@@ -34,6 +34,7 @@ function tick() {
 
     if (code) {
       output.innerHTML = `QR Code Data: ${code.data}`;
+      video.pau;
     } else {
       output.innerHTML = "No QR code detected.";
     }
