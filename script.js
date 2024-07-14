@@ -6,21 +6,26 @@ const startButton = document.getElementById("button");
 let videoStream = null;
 let scanning = true;
 
+video.addEventListener("loadedmetadata", function () {
+  const { videoWidth, videoHeight } = video;
+  alert(`${videoWidth}, ${videoHeight}`);
+});
+
 function startVideo() {
   navigator.mediaDevices
     .getUserMedia({
       video: {
         facingMode: "environment",
-        width: { ideal: 1280 }, // ideal 해상도를 설정합니다.
-        height: { ideal: 720 }, // ideal 해상도를 설정합니다.
       },
     })
     .then((stream) => {
       videoStream = stream;
       video.srcObject = stream;
       video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+
       video.play();
       scanning = true;
+
       requestAnimationFrame(tick);
       startButton.style.display = "none";
     })
