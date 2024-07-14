@@ -24,6 +24,13 @@
         border: 3px solid black;
         position: relative;
       }
+      #size {
+        position: fixed;
+        top: 32px;
+        left: 0;
+        color: blue;
+        font-weight: 900;
+      }
       #video {
         width: 1280px;
         object-fit: cover;
@@ -59,6 +66,7 @@
   <body>
     <div id="container">
       <video id="video" autoplay></video>
+      <div id="size"></div>
       <div id="output"></div>
       <div id="button">다시 QR 인식하기</div>
       <div id="box"></div>

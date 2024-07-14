@@ -1,6 +1,7 @@
 // script.js
 
 const video = document.getElementById("video");
+const size = document.getElementById("size");
 const output = document.getElementById("output");
 const startButton = document.getElementById("button");
 let videoStream = null;
@@ -8,7 +9,7 @@ let scanning = true;
 
 video.addEventListener("loadedmetadata", function () {
   const { videoWidth, videoHeight } = video;
-  alert(`${videoWidth}, ${videoHeight}`);
+  size.innerHTML = `${videoWidth}, ${videoHeight}`;
 });
 
 function startVideo() {
